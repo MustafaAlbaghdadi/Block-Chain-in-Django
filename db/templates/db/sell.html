@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+sell page
+
+<form method="post" ACTION="/postSell/">
+{% csrf_token %}
+
+    <label for="cars">Buyer:</label>
+        <select name="buyer" id="buyer" required>
+           {% for foo in users %}
+                <option value="{{foo.id }}">{{ foo.username }}</option>
+           {% endfor %}
+        </select>
+        <input hidden name="productID" value="{{ product.id }}">
+    <br><br>
+
+<textarea name="des"  cols="30" rows="5" >
+
+</textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
+</body>
+</html>

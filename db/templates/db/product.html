@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+product
+{{ product.name }}
+
+
+<hr/>
+{% for contract in contracts %}
+<h1>{{ contract.strHash }}</h1>
+    <br>
+{% endfor %}
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=xx">
+</body>
+</html>

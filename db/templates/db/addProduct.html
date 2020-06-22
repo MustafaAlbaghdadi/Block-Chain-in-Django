@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form   method="post" name="AddProduct">
+    {% csrf_token %}
+
+   Name: <input name="Name" type="text" required/><br/>
+    Count: <input name="Count" type="number" required><br/>
+    ExpireDate:<input name="ExireDate" type="date" required><br/>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
