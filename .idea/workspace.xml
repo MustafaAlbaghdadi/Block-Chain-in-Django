@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91658ffb-396c-4a9c-b978-9e1ae33dc441" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/templates/db/AllProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/db/templates/db/AllProduct.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/templates/db/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/db/templates/db/addProduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,7 @@
       <updated>1592846672579</updated>
       <workItem from="1592846751868" duration="10938000" />
       <workItem from="1592981566091" duration="3616000" />
-      <workItem from="1592989062401" duration="2966000" />
+      <workItem from="1592989062401" duration="3566000" />
     </task>
     <servers />
   </component>
