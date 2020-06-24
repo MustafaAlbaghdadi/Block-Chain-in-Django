@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-<form   method="post" name="AddProduct">
-    {% csrf_token %}
 
-   Name: <input name="Name" type="text" required/><br/>
-    Count: <input name="Count" type="number" required><br/>
-    ExpireDate:<input name="ExireDate" type="date" required><br/>
-    <input type="submit" value="Submit">
-</form>
-</body>
-</html>
+
+
+
+
+
+{% include 'db/Header.html' %}
+
+<div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Add new Product</h6>
+                </div>
+                <div class="card-body">
+
+
+                  <form class="user" method="post" name="AddProduct">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-user" name="Name"  placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" class="form-control form-control-user" name="Count"  placeholder="Count">
+                        </div>
+                        <div class="form-group">
+                          <input type="date" class="form-control form-control-user" name="ExireDate"  placeholder="Expiry Date">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Add" class="btn btn-primary btn-user btn-block" />
+                        </div>
+                    </form>
+
+
+
+                </div>
+              </div>
+
+
+{% include 'db/Footer.html' %}
