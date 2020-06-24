@@ -16,6 +16,14 @@ def products(request):
     else:
         return redirect("/admin")
 
+def AllProduct(request):
+    if request.user.is_authenticated:
+        productList = Product.objects.all()
+        context = {'productList': productList}
+        return render(request, 'db/AllProduct.html', context)
+    else:
+        return redirect("/admin")
+
 def addProduct(request):
     if request.user.is_authenticated:
         if request.method == "POST":
