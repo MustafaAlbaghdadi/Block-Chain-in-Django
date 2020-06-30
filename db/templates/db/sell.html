@@ -1,30 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-sell page
+{% include 'db/Header.html' %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Selling</h6>
+    </div>
+    <div class="card-body">
 
-<form method="post" ACTION="/postSell/">
-{% csrf_token %}
 
-    <label for="cars">Buyer:</label>
-        <select name="buyer" id="buyer" required>
-           {% for foo in users %}
-                <option value="{{foo.id }}">{{ foo.username }}</option>
-           {% endfor %}
-        </select>
-        <input hidden name="productID" value="{{ product.id }}">
-    <br><br>
+        <form method="post" ACTION="/postSell/">
+            {% csrf_token %}
 
-<textarea name="des"  cols="30" rows="5" >
+            <div class="form-group">
+                <label for="cars" class="col-2">Buyer:</label>
 
-</textarea>
-    <br><br>
-    <input type="submit" value="Submit">
+                <select name="buyer" id="buyer" class="form-control form-control-user" required>
+                    {% for foo in users %}
+                        <option value="{{ foo.id }}">{{ foo.username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-</form>
-</body>
-</html>
+            <input hidden class="form-control" name="productID" value="{{ product.id }}">
+
+            <div class="form-group">
+                <textarea class="form-control" name="des" cols="30" rows="5" placeholder="Info"></textarea>
+
+            </div>
+
+            <input class="form-control btn btn-primary" type="submit" value="Submit">
+
+        </form>
+
+
+    </div>
+</div>
+{% include 'db/Footer.html' %}

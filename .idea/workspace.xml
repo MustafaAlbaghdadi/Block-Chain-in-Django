@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/templates/db/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/db/templates/db/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/templates/db/sell.html" beforeDir="false" afterPath="$PROJECT_DIR$/db/templates/db/sell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +88,8 @@
       <workItem from="1592846751868" duration="10938000" />
       <workItem from="1592981566091" duration="3616000" />
       <workItem from="1592989062401" duration="6784000" />
+      <workItem from="1593287686859" duration="1212000" />
+      <workItem from="1593451001767" duration="9828000" />
     </task>
     <servers />
   </component>
@@ -117,10 +121,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1592945790068" />
-    <state x="391" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1593287695038">
+    <state x="391" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1593451003561">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="391" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1593287695038" />
+    <state x="391" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1593451003561" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1592998551445">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

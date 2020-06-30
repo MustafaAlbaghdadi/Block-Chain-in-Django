@@ -41,15 +41,26 @@ def addProduct(request):
     else:
         return redirect("/admin")
 
-
+class ContractModel:
+    def __init__(self, Id, seller,buyer, info, date):
+        self.Id = Id
+        self.seller = seller
+        self.buyer = buyer
+        self.info = info
+        self.date = date
 def productDetails(request,productd_id):
     product = get_object_or_404(Product, id=productd_id)
     contracts = Contract.objects.filter(product_id = productd_id)
+    cons = []
+    for con in contracts:
+        seller = User.objects.filter(id = con.sellerID).first()
+        buyer = User.objects.filter(id = con.buyerID).first()
+        cons.append(ContractModel(con.id,seller,buyer,con.info,con.date))
     ownerId = request.user.id
     Sellable = 'False'
     if product.ownerID == ownerId:
         Sellable = 'True'
-    return render(request, 'db/product.html', {'product': product , "contracts":contracts,"sellable":Sellable})
+    return render(request, 'db/product.html', {'product': product , "contracts":cons,"sellable":Sellable})
 
 def sell(request,productd_id):
     if request.user.is_authenticated:
@@ -81,7 +92,7 @@ def postSell(request):
                                 , product_id=productID, prevHash=prehash)
             product.save()
             contract.save()
-            return redirect("/" + hash)
+            return redirect("/products/")
         else:
             return redirect("/admin")
 

@@ -1,7 +1,7 @@
 {% include 'db/Header.html' %}
 
 
-          <!-- Page Heading -->
+<!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Product Details</h1>
     {% if sellable == 'True' %}
@@ -12,78 +12,150 @@
     {% endif %}
 </div>
 
- <div class="row">
+<div class="row">
 
-     <div class="col-xl-3 col-md-6 mb-4">
-         <div class="card border-left-primary shadow h-100 py-2">
-             <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Name</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.name }}</div>
-                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">ID</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.id }}</div>
                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-
-     <div class="col-xl-3 col-md-6 mb-4">
-         <div class="card border-left-success shadow h-100 py-2">
-             <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Quantity</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.count }}</div>
-                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <i class="fas fa-id-card fa-2x text-gray-300"></i>
                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-     <div class="col-xl-3 col-md-6 mb-4">
-         <div class="card border-left-success shadow h-100 py-2">
-             <div class="card-body">
-                 <div class="row no-gutters align-items-center">
-                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Quantity</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.count }}</div>
-                     </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Title</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.name }}</div>
+                    </div>
                     <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        <i class="fas fa-check fa-2x text-gray-300"></i>
                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Quantity</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.count }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calculator fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Expire Date</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ product.expire_date.date }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>
 
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Add new Product</h6>
+
+<div class="row">
+
+    <!-- Area Chart -->
+    <div class="col-xl-9 col-lg-8">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Contracts</h6>
+
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>seller</th>
+                            <th>buyer</th>
+                            <th>date</th>
+                            <th>info</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>seller</th>
+                            <th>buyer</th>
+                            <th>date</th>
+                            <th>info</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% if contracts %}
+                            {% for con in contracts %}
+
+                                <tr>
+                                    <td>{{ con.Id  }}</td>
+                                    <td>{{ con.seller }}</td>
+                                    <td>{{ con.buyer }}</td>
+                                    <td>{{ con.date }}</td>
+                                    <td>{{ con.info }}</td>
+                                </tr>
+
+                            {% endfor %}
+                        {% else %}
+                            <p>No Contract are available.</p>
+                        {% endif %}
+                        </tbody>
+                    </table>
+
+
                 </div>
-                <div class="card-body">
-                    product
-                    {{ product.name }}
-                    <hr/>
-                    {% for contract in contracts %}
-                        <h1>{{ contract.strHash }}</h1>
-                        <br>
-                    {% endfor %}
+            </div>
+        </div>
+    </div>
 
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=xx">
+<!-- Pie Chart -->
+<div class="col-xl-3 col-lg-4">
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">QR Code</h6>
 
-                </div>
-              </div>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
 
+            <img width="100%" height="auto" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://127.0.0.1:8000/products/2/">
+
+
+        </div>
+    </div>
+</div>
+</div>
 
 {% include 'db/Footer.html' %}
