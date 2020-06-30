@@ -1,0 +1,72 @@
+{% include 'db/Header.html' %}
+
+
+
+
+<div class="row">
+
+    <!-- Area Chart -->
+    <div class="col-xl-12 col-lg-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Contracts</h6>
+
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>seller</th>
+                            <th>buyer</th>
+                            <th>date</th>
+                            <th>info</th>
+                            <th>Previous Hash</th>
+                            <th>current Hash</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>seller</th>
+                            <th>buyer</th>
+                            <th>date</th>
+                            <th>info</th>
+                            <th>Previous Hash</th>
+                            <th>current Hash</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% if contracts %}
+                            {% for con in contracts %}
+
+                                <tr>
+                                    <td>{{ con.Id  }}</td>
+                                    <td>{{ con.seller }}</td>
+                                    <td>{{ con.buyer }}</td>
+                                    <td>{{ con.date }}</td>
+                                    <td>{{ con.info }}</td>
+                                    <td>{{ con.prehash }}</td>
+                                    <td>{{ con.currentHash }}</td>
+                                </tr>
+
+                            {% endfor %}
+                        {% else %}
+                            <p>No Contract are available.</p>
+                        {% endif %}
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Pie Chart -->
+</div>
+
+{% include 'db/Footer.html' %}

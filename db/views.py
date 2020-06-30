@@ -23,6 +23,18 @@ def AllProduct(request):
         return render(request, 'db/AllProduct.html', context)
     else:
         return redirect("/admin")
+def contracts(request):
+    if request.user.is_authenticated:
+        contracts = Contract.objects.all()
+        cons = []
+        for con in contracts:
+            seller = User.objects.filter(id=con.sellerID).first()
+            buyer = User.objects.filter(id=con.buyerID).first()
+            cons.append(ContractModel(con.id, seller, buyer, con.info, con.date, con.prevHash, con.strHash))
+        context = {'contracts': cons}
+        return render(request, 'db/contracts.html', context)
+    else:
+        return redirect("/admin")
 
 def addProduct(request):
     if request.user.is_authenticated:
@@ -42,12 +54,14 @@ def addProduct(request):
         return redirect("/admin")
 
 class ContractModel:
-    def __init__(self, Id, seller,buyer, info, date):
+    def __init__(self, Id, seller,buyer, info, date,prehash, currentHash):
         self.Id = Id
         self.seller = seller
         self.buyer = buyer
         self.info = info
         self.date = date
+        self.prehash = prehash
+        self.currentHash = currentHash
 def productDetails(request,productd_id):
     product = get_object_or_404(Product, id=productd_id)
     contracts = Contract.objects.filter(product_id = productd_id)
@@ -55,7 +69,7 @@ def productDetails(request,productd_id):
     for con in contracts:
         seller = User.objects.filter(id = con.sellerID).first()
         buyer = User.objects.filter(id = con.buyerID).first()
-        cons.append(ContractModel(con.id,seller,buyer,con.info,con.date))
+        cons.append(ContractModel(con.id,seller,buyer,con.info,con.date,'',''))
     ownerId = request.user.id
     Sellable = 'False'
     if product.ownerID == ownerId:
@@ -97,17 +111,5 @@ def postSell(request):
             return redirect("/admin")
 
 def index(request):
-
     return render(request, 'db/index.html')
 
-# Create your views here.
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'db/detail.html', {'question': question})
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
