@@ -101,7 +101,7 @@ def postSell(request):
             prehash ='',
             product.ownerID = newOnwer
             if Contract.objects.count()>0:
-                prehash = Contract.objects.reverse()[0].strHash
+                prehash = Contract.objects.reverse()[Contract.objects.count()-1].strHash
             contract = Contract(info = des,strHash = hash ,sellerID=ownerId,buyerID=newOnwer,date= datetime.now().date()
                                 , product_id=productID, prevHash=prehash)
             product.save()
