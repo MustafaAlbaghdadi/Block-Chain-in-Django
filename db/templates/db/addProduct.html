@@ -1,39 +1,66 @@
 
 
 
-
-
-
-
 {% include 'db/Header.html' %}
 
 <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Add new Product</h6>
-                </div>
-                <div class="card-body">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Add new Product</h6>
+    </div>
+    <div class="card-body">
 
 
-                  <form class="user" method="post" name="AddProduct">
-                        {% csrf_token %}
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-user" name="Name"  placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                          <input type="number" class="form-control form-control-user" name="Count"  placeholder="Count">
-                        </div>
-                        <div class="form-group">
-                          <input type="date" class="form-control form-control-user" name="ExireDate"  placeholder="Expiry Date">
-                        </div>
+        <form class="user" method="post" name="AddProduct">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="Name" placeholder="Name">
+            </div>
 
-                        <div class="form-group">
-                            <input type="submit" value="Add" class="btn btn-primary btn-user btn-block" />
-                        </div>
-                    </form>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="unite_type" placeholder="unite type">
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control form-control-user" name="Count" placeholder="Count">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control form-control-user" name="farm_temp" placeholder="farm temp">
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control form-control-user" name="farm_humidity"
+                       placeholder="farm humidity">
+            </div>
 
 
-                </div>
-              </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="compost_type"
+                       placeholder="compost type">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="seed_type" placeholder="seed type">
+            </div>
+
+
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="farm_location"
+                       placeholder="farm location">
+            </div>
+
+            <div class="form-group">
+                <label class="form-check-label" >harvest date</label>
+                <input type="date" class="form-control form-control-user" name="date_of_harvest"
+                       placeholder="harvest date">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary btn-user btn-block"/>
+            </div>
+        </form>
+
+
+    </div>
+</div>
 
 
 {% include 'db/Footer.html' %}

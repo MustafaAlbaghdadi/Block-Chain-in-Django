@@ -20,6 +20,127 @@
             </div>
 
             <input hidden class="form-control" name="productID" value="{{ product.id }}">
+            <input hidden class="form-control" name="state" value="{{ state }}">
+
+            {% if state == 1 %}
+
+
+
+
+
+                <div class="form-group">
+                    canning date
+                    <input type="date" class="form-control form-control-user" name="canning_date"
+                           placeholder="canning date">
+                </div>
+
+                <div class="form-group">
+                    processing date
+                    <input type="date" class="form-control form-control-user" name="processing_date"
+                           placeholder="processing date">
+                </div>
+                <div class="form-group">
+                    expire date
+                    <input type="date" class="form-control form-control-user" name="expire_date"
+                           placeholder="expire date">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="factory_temp"
+                           placeholder="Factory temp">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="factory_humidity"
+                           placeholder="Factory humidity">
+                </div>
+            {% endif %}
+
+
+
+
+            {% if state == 2 %}
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="unite_type"
+                           placeholder="unite type">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="Count" placeholder="Count">
+                </div>
+                <div class="form-group">
+                    entry store date
+                    <input type="date" class="form-control form-control-user" name="entry_store_date"
+                           placeholder="entry_store_date">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="destrbutor_temp"
+                           placeholder="destrbutor temp">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="destrbutor_humidity"
+                           placeholder="destrbutor humidity">
+                </div>
+
+            {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {% if state == 3 %}
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" name="unite_type"
+                           placeholder="unite type">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="Count" placeholder="Count">
+                </div>
+
+                <div class="form-group">
+                    entry Market date
+                    <input type="date" class="form-control form-control-user" name="entry_market_date"
+                           placeholder="entry_market_date">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="market_temp"
+                           placeholder="market temp">
+                </div>
+
+                <div class="form-group">
+                    <input type="number" class="form-control form-control-user" name="market_humidity"
+                           placeholder="market humidity">
+                </div>
+
+            {% endif %}
+
+
+
+
+
 
             <div class="form-group">
                 <textarea class="form-control" name="des" cols="30" rows="5" placeholder="Info"></textarea>
