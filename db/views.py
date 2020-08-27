@@ -103,15 +103,17 @@ def sell(request, productd_id):
         users = User.objects.all()
         product = get_object_or_404(Product, id=productd_id)
         state = 0
-        if product.factoryID == 0:
-            users = User.objects.filter(groups__name__in=['Factory']).all()
-            state = 1
-        if product.distrabuterID == 0:
-            users = User.objects.filter(groups__name__in=['Distrabuter']).all()
-            state = 2
         if product.marktingID == 0:
             users = User.objects.filter(groups__name__in=['marketer']).all()
             state = 3
+        if product.distrabuterID == 0:
+            users = User.objects.filter(groups__name__in=['Distrabuter']).all()
+            state = 2
+        if product.factoryID == 0:
+            users = User.objects.filter(groups__name__in=['Factory']).all()
+            state = 1
+
+
         ownerId = request.user.id
         if (product.ownerID != ownerId):
             return redirect("/products")
@@ -139,6 +141,9 @@ def postSell(request):
 
             if request.POST["state"] == '1':
                 product.ownerID = newOnwer
+                product.name= request.POST["name"]
+                product.unite_type = request.POST["unite_type"]
+                product.count = request.POST["Count"]
                 product.canning_date = request.POST["canning_date"]
                 product.processing_date = request.POST["processing_date"]
                 product.expire_date = request.POST["expire_date"]

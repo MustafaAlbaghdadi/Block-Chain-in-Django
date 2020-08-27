@@ -519,7 +519,8 @@
         </div>
     </div>
 
-<!-- Pie Chart -->
+
+{% if  product.marktingID > 0 %}
 <div class="col-xl-3 col-lg-4">
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
@@ -530,11 +531,17 @@
         <!-- Card Body -->
         <div class="card-body">
 
-            <img width="100%" height="auto" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://194.135.84.18/products/{{ product.id }}/">
+            <img width="100%" height="auto" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.0.108/products/{{ product.id }}/">
 
 
         </div>
     </div>
+{% endif %} 
+
+        
+        
+        
+        
 </div>
 </div>
 
